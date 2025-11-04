@@ -2,7 +2,7 @@ package assignments.Ex0;
 /**
  * This class is a basis for Ex0 (your first assigment),
  * The definition of the Ex0 can be found here: https://docs.google.com/document/d/1UtngN203ttQKf5ackCnXs4UnbAROZWHr/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
- * You are asked to complete the functions below amd may add additional functions if needed.
+ * You are asked to complete the functions below and may add additional functions if needed.
 
  */
 public class Ex0 {
@@ -76,7 +76,7 @@ public class Ex0 {
      *
      * @param m a none negative integer.
      * @param n - a positive even integer.
-     * @return a prime number p1>=start that the following prime number is p1+n.
+     * @return a prime number (p1) such that (p1,p1+n) are the m"th the closest prime pair (starting from 0).
      *
      */
     public static long getMthClosestPrimePair(int m, long n) {
