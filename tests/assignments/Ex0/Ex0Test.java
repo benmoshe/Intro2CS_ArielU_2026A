@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * This JUnit class represents a simple example regarding how to test Ex0
  * and functions in general - using the notion of Unit Testing.
  * It tests both correctness and runtime performance (using the @Timeout notion).
- * Note: add an explanation for every @Test, you are welcome to add your own tests.
  *
  */
 class Ex0Test {
@@ -16,7 +15,7 @@ class Ex0Test {
     void isPrime() {
         boolean prime = Ex0.isPrime(2);
         assertTrue(prime);
-        prime = Ex0.isPrime(3);
+         prime = Ex0.isPrime(3);
         assertTrue(prime);
         prime = Ex0.isPrime(29);
         assertTrue(prime);
@@ -25,18 +24,18 @@ class Ex0Test {
     }
     @Test
     void isNotPrime() {
-        boolean isPrime = Ex0.isPrime(2);
-        isPrime = Ex0.isPrime(0);
-        assertFalse(isPrime);
-        isPrime = Ex0.isPrime(1);
-        assertFalse(isPrime);
-        isPrime = Ex0.isPrime(-30);
-        assertFalse(isPrime);
+        boolean prime = Ex0.isPrime(2);
+        prime = Ex0.isPrime(0);
+        assertFalse(prime);
+        prime = Ex0.isPrime(1);
+        assertFalse(prime);
+        prime = Ex0.isPrime(-30);
+        assertFalse(prime);
         long notAPrime = 2*3*5*7*11*13+1;
-        isPrime = Ex0.isPrime(notAPrime);
-        assertFalse(isPrime);
-        isPrime = Ex0.isPrime(333333331);
-        assertFalse(isPrime);
+        prime = Ex0.isPrime(notAPrime);
+        assertFalse(prime);
+        prime = Ex0.isPrime(333333331);
+        assertFalse(prime);
     }
     @Test
     void getPrimePair() {
@@ -88,12 +87,17 @@ class Ex0Test {
     void getClosestPrimePairRuntime1() {
         getClosestPrimePair();
     }
-
     @Test
     @Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
     void getClosestPrimePairRuntime2() {
         long n1 = 2, bigStart = 10000;
         long p1 = Ex0.getClosestPrimePair(bigStart, n1);
+    }
+    @Test
+    @Timeout(value = 10000, unit = TimeUnit.MILLISECONDS)
+    void getClosestPrimePairRuntime3() {
+        long n1 = 10, start = 2;
+        long p1 = Ex0.getClosestPrimePair(start, n1);
     }
 
     @Test
@@ -104,4 +108,5 @@ class Ex0Test {
         long p1 = Ex0.getMthClosestPrimePair(bigM,n1);
         assertEquals(1261079,p1);
     }
+
 }
