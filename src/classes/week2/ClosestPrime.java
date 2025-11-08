@@ -19,7 +19,6 @@ public class ClosestPrime {
         int x = sc.nextInt();
         long a = getClosestPrime(x);
         System.out.println(a);
-
     }
     public static long getClosestPrime(long n){
        // int n = 3331-10;
