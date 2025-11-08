@@ -88,12 +88,14 @@ class Ex0Test {
     void getClosestPrimePairRuntime1() {
         getClosestPrimePair();
     }
+
     @Test
     @Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
     void getClosestPrimePairRuntime2() {
         long n1 = 2, bigStart = 10000;
         long p1 = Ex0.getClosestPrimePair(bigStart, n1);
     }
+
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
     void getMthClosestPrimePairRuntime() {
