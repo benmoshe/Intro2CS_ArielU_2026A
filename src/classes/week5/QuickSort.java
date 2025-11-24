@@ -28,7 +28,14 @@ class QuickSort
      // swap the pivot (arr[low]) with arr[i] (the pivot's position).
      swap(arr,low,i);
      return i;
- } 
+ }
+    public static void sort(int arr[]) {
+        int len = arr.length;
+        double[] tmp = new double[len];
+        for(int i=0;i<len;i=i+1) {tmp[i]=arr[i];}
+        sort(tmp);
+        for(int i=0;i<len;i=i+1) {arr[i] = (int)tmp[i];}
+    }
  /**
   * The main function that implements QuickSort()
     arr[] --> the array to be sorted.
