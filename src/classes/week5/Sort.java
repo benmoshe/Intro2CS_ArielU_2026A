@@ -3,28 +3,15 @@ package classes.week5;
 import java.util.Arrays;
 /**
  * output for 40,000 int array:
- * Bubble sort time = 1.644 secs,  is sorted? true
- * Selection sort time = 0.352 secs,  is sorted? true
- * Insertion sort time = 0.585 secs,  is sorted? true
- * My slow Insertion sort time = 2.881 secs,  is sorted? true
- * Recursive Merge sort time = 0.014 secs,  is sorted? true
- * Java sort time = 0.021 secs,  is sorted? true
+ Bubble sort time = 0.661 secs,  is sorted? true
+ Selection sort time = 0.404 secs,  is sorted? true
+ Insertion sort time = 0.404 secs,  is sorted? true
+ My slow Insertion sort time = 0.517 secs,  is sorted? true
+ Recursive Merge sort time = 0.008 secs,  is sorted? true
+ Recursive Quick sort time = 0.005 secs,  is sorted? true
+ Java sort time = 0.005 secs,  is sorted? true
 
-Found at index 20057 the item 20000
-
-Bubble sort time = 1.646 secs,  is sorted? true
-Selection sort time = 0.368 secs,  is sorted? true
-Insertion sort time = 0.643 secs,  is sorted? true
-My slow Insertion sort time = 2.882 secs,  is sorted? true
-Recursive Merge sort time = 0.018 secs,  is sorted? true
-Java sort time = 0.025 secs,  is sorted? true
-
-Bubble sort time = 1.668 secs,  is sorted? true
-Selection sort time = 0.363 secs,  is sorted? true
-Insertion sort time = 0.603 secs,  is sorted? true
-My slow Insertion sort time = 2.891 secs,  is sorted? true
-Recursive Merge sort time = 0.019 secs,  is sorted? true
-Java sort time = 0.027 secs,  is sorted? true
+ Found at index 20051 the item 20000
  *
  */
 public class Sort {
@@ -182,8 +169,8 @@ public class Sort {
 				      res[i+j] = arr2[j]; j=j+1;
 				}
 			}
-			while ( i < arr1.length) {res[i+j] = arr1[i++];}
-			while ( j < arr2.length) {res[i+j] = arr2[j++];}
+			while ( i < arr1.length) {res[i+j] = arr1[i]; i++;}
+			while ( j < arr2.length) {res[i+j] = arr2[j]; j++;}
 		     return res;
 		}
 	
@@ -195,6 +182,7 @@ public class Sort {
 		int[] arr4 = Arrays.copyOf(arr1,arr1.length);
 		int[] arr5 = Arrays.copyOf(arr1,arr1.length);
 		int[] arr6 = Arrays.copyOf(arr1,arr1.length);
+        int[] arr7 = Arrays.copyOf(arr1,arr1.length);
 
 		//////// bubbleSort
 		long start = System.currentTimeMillis();
@@ -225,10 +213,16 @@ public class Sort {
 		mergeSort(arr5);
 		end = System.currentTimeMillis();
 		System.out.println("Recursive Merge sort time = "+(end-start)/1000.+" secs,  is sorted? "+ MyArrayLibrary.isSortedAscending(arr5));
-		
-		////////// Java  built-in sort (Dual-pivot Quicksort)
+
+        /////////// Recursive Quick Sort
+        start = System.currentTimeMillis();
+        QuickSort.sort(arr6);
+        end = System.currentTimeMillis();
+        System.out.println("Recursive Quick sort time = "+(end-start)/1000.+" secs,  is sorted? "+ MyArrayLibrary.isSortedAscending(arr5));
+
+        ////////// Java  built-in sort (Dual-pivot Quicksort)
 		start = System.currentTimeMillis();
-		Arrays.sort(arr6);
+		Arrays.sort(arr7);
 		end = System.currentTimeMillis();
 		System.out.println("Java sort time = "+(end-start)/1000.+" secs,  is sorted? "+ MyArrayLibrary.isSortedAscending(arr6));						
 		
