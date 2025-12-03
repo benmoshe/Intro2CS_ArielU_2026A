@@ -87,6 +87,26 @@ class Ex1Test {
 		double[] p21 = Ex1.mul(po2, po1);
 		assertTrue(Ex1.equals(p12, p21));
 	}
+    @Test
+    /**
+     * Tests that p1*p2 == p2*p1
+     */
+    void testMuMonom() {
+        double a1 = 1.5, a2 = -2.5;
+        double[] m1 = {a1,1,2,3,-4.4,5,6,7,8,9,10,11,12,12,13,0,0,0,1,1,1.3};
+        double[] m2 = {a2,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,-3.1,0,0,0,0,0};
+        double[] p31 = Ex1.mul(po3, m1);
+        double[] p32 = Ex1.mul(po3, m2);
+        double[] p13 = Ex1.mul(m1, po3);
+        double[] p23 = Ex1.mul(m2, po3);
+        assertTrue(Ex1.equals(p32, p23));
+        assertTrue(Ex1.equals(p31, p13));
+        String s13 = Ex1.poly(p13);
+        String s31 = Ex1.poly(p31);
+        double[] d13 = Ex1.getPolynomFromString(s13);
+        double[] d31 = Ex1.getPolynomFromString(s31);
+        assertTrue(Ex1.equals(d13, d31));
+    }
 	@Test
 	/**
 	 * Tests that p1(x) * p2(x) = (p1*p2)(x),
@@ -200,4 +220,5 @@ class Ex1Test {
 		double area = 58.5658;
 		assertEquals(a1,area, Ex1.EPS);
 	}
+
 }
