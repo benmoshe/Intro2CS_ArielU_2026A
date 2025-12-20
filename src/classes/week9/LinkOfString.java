@@ -1,8 +1,9 @@
 package classes.week9;
-/** * a Link with String as its data, for a LinkedList of Strings.
-	 * @author boaz.benmoshe
-	 *
-	 */
+/**
+ *  a Link with String as its data, for a LinkedList of Strings.
+ * @author boaz.benmoshe
+ *
+ */
 public class LinkOfString {
 	private String _data;
 	private LinkOfString _next;

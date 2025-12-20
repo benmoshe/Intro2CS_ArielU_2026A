@@ -51,5 +51,5 @@ public interface MyListInterface<T> {
 	 * Connects the l List to the end of this List.
 	 * @param l
 	 */
-	public void connect(MyList<T> l);
+	public void connect(MyListInterface<T> l);
 }

@@ -68,7 +68,7 @@ public class MyList<T> implements MyListInterface<T>{
 	public boolean isEmpty() {
 		return this.size()==0;
 	}
-	
+    @Override
 	public int size() {
 		int ans = 0;
 		Link<T> t = _first;
@@ -78,6 +78,7 @@ public class MyList<T> implements MyListInterface<T>{
 		}
 		return ans;
 	}
+    @Override
 	public String toString() {
 		String ans = "LinkList: ";
 		for(int i=0;i<size();i=i+1) {
@@ -85,13 +86,14 @@ public class MyList<T> implements MyListInterface<T>{
 		}
 		return ans;
 	}
-	public void connect(MyList<T> l) {
-		if(this.isEmpty()) {_first =l._first;}
-		else {
-			Link<T> t = getLink(this.size()-1);
-			t.setNext(l._first);
-		}
-	}
+    @Override
+    public void connect(MyListInterface<T> l) {
+        if(l!=null) {
+            for(int i=0;i<l.size();i=i+1) {
+                this.add(l.get(i));
+            }
+        }
+    }
 ///////////////****** Private ****** ///////////////
 	private Link<T> getLink(int i) {
 		Link<T> ans = null;
