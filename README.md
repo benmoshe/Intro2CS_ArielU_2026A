@@ -31,6 +31,9 @@ Class 9: https://docs.google.com/presentation/d/1GVmEJaWNd56YsrXiZhWyUcuLnMlEVpm
 Class 10: https://docs.google.com/presentation/d/1N20U_zfZhr4uRqgwVZv_DogYGNmek-1E/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
 
 Assignments:
+
 Ex0: https://docs.google.com/document/d/1UtngN203ttQKf5ackCnXs4UnbAROZWHr/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
 Ex1: https://docs.google.com/document/d/1GcNQht9rsVVSt153Y8pFPqXJVju56CY4/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
 Ex2: https://docs.google.com/document/d/1BtSldHciAGqjccYC3d7BKvWqIljfxKeJ/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
