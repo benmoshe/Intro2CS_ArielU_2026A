@@ -52,22 +52,27 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 	@Override
 	public void add(T a) {
 		// null is NOT a valid data (will not be inserted to this binary tree
-		if(a!=null) {
-			_modeCount++; // this is required as each recursive call uses a nother _modecount)
-			if(this.isEmpty()) {_root = a;}
-			else {
-				double d = Math.random();
-				if(d<0.5) {
-					if(_left==null) {_left = new BinaryTree1<T>(a); _modeCount++;}
-					else {_left.add(a);}
-				}
-				else {
-					if(_right==null) {_right = new BinaryTree1<T>(a); _modeCount++;}
-					else {_right.add(a);}
-				}
-			}
-		}
+	    add(a,0.5);
 	}
+    @Override
+    public void add(T a, double prob) {
+        // null is NOT a valid data (will not be inserted to this binary tree
+        if(a!=null) {
+            _modeCount++; // this is required as each recursive call uses a nother _modecount)
+            if(this.isEmpty()) {_root = a;}
+            else {
+                double d = Math.random();
+                if(d<prob) {
+                    if(_left==null) {_left = new BinaryTree1<T>(a); _modeCount++;}
+                    else {_left.add(a);}
+                }
+                else {
+                    if(_right==null) {_right = new BinaryTree1<T>(a); _modeCount++;}
+                    else {_right.add(a);}
+                }
+            }
+        }
+    }
 	public int getModeCount() {return _modeCount;}
 	@Override
 	public T find(T t) {

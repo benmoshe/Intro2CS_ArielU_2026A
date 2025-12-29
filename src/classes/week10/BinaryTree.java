@@ -33,7 +33,15 @@ public interface BinaryTree<T> {
 	 */
 	public T get(int i);
 	public boolean isLeaf();
-	/**
+
+    /** The prob [0,1] to be add to the left Tree.
+     *
+     * @param a
+     * @param prob
+     */
+    void add(T a, double prob);
+
+    /**
 	 * search the binary tree for an element that equals to t. If exists - returns it.
 	 * none - returns null.
 	 * @param t
