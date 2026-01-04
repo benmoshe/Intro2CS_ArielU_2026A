@@ -5,15 +5,12 @@ import classes.week7.Circle2D;
 import classes.week7.GeoShape;
 import classes.week7.Rect2D;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class DS_examples {
     public static void main(String[] args) {
         ArrayList<GeoShape> a1 = new ArrayList<GeoShape>();
-        HashMap<String, GeoShape> a2 = new HashMap<String, GeoShape>();
+        Hashtable<String, GeoShape> a2 = new Hashtable<String, GeoShape>();
         HashMap<Integer, GeoShape> a3  = new HashMap<Integer, GeoShape>();
 
         GeoShape[] gs = createGeoShapeArr();
@@ -24,6 +21,7 @@ public class DS_examples {
         }
 
         Iterator<GeoShape> it = a1.iterator();
+        System.out.println("*** The 4 GeoShapes in 3 different data structures: ***");
         while(it.hasNext()) {
             GeoShape g = it.next();
             System.out.println("ArrayList: "+g);
@@ -37,6 +35,7 @@ public class DS_examples {
         Set<Integer> keys3 = a3.keySet();
         Iterator<Integer> itr3  = keys3.iterator();
         System.out.println();
+        System.out.println("*** The 4 Keys of the Hashtable and the HashMap: ***");
         while(itr2.hasNext()) {
             String key = itr2.next();
             System.out.println("HashTableKey: "+key);
@@ -49,7 +48,7 @@ public class DS_examples {
         Point2D v1 = new Point2D(1,2);
         while(it.hasNext()) {
             GeoShape g = it.next();
-            if(i%2==0) {a1.get(i).move(v1);}
+            if(i%2==0) {a1.get(i).move(v1);}  // modifying the even index GeoShape
             i+=1;
         }
 
@@ -58,6 +57,7 @@ public class DS_examples {
         keys3 = a3.keySet();
         itr3  = keys3.iterator();
         System.out.println();
+        System.out.println("*** The Keys, two are modified : ***");
         while(itr2.hasNext()) {
             String key = itr2.next();
             System.out.println("HashTableKey: "+key);
@@ -66,6 +66,7 @@ public class DS_examples {
         }
         it = a1.iterator();
         System.out.println();
+        System.out.println("*** The modified GeoShapes leads to unknow keys: ***");
         while(it.hasNext()) {
             GeoShape g = it.next();
             System.out.println("ArrayList: "+g);

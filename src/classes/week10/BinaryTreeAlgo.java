@@ -28,6 +28,26 @@ public class BinaryTreeAlgo {
 		}
 		return ans;
 	}
+    public static boolean sameStructure(BinaryTree t1, BinaryTree t2) {
+        boolean ans = false;
+        if(t1==null && t2==null) {ans=true;}
+        else{
+            if(t1==null || t2==null) {ans=false;}
+            else {
+                int s1 = t1.size();
+                int s2 = t2.size();
+                if(s1!=s2) {ans=false;}
+                else {
+                    if(s1==1) {ans=true;}
+                    else {
+                        return sameStructure(t1.getLeft(), t2.getLeft()) &&
+                                sameStructure(t1.getRight(),t2.getRight());
+                    }
+                }
+            }
+        }
+        return  ans;
+    }
 	public static <T> int inOrderPrint(BinaryTree<T> bt) {
 		int ans = 0;
 		if(bt!=null && !bt.isEmpty()) {
@@ -212,14 +232,16 @@ public class BinaryTreeAlgo {
 	}
 	public static <T> void printGUI(BinaryTree<T> bt, double x, double y, double scale) {
 		if(bt!=null && !bt.isEmpty()) {
-			if(bt.getLeft()!=null) {
-				printGUI(bt.getLeft(), x-scale, y-1, scale/2);
-				StdDraw.line(x, y-0.4, x-scale, y-0.6);
-			}
+
 			//System.out.println(bt.getRoot());
 			StdDraw.text(x, y, bt.getRoot().toString());
 			StdDraw.circle(x, y, 0.4);
-			
+            StdDraw.show();
+
+            if(bt.getLeft()!=null) {
+                printGUI(bt.getLeft(), x-scale, y-1, scale/2);
+                StdDraw.line(x, y-0.4, x-scale, y-0.6);
+            }
 			//printGUI(bt.getRight(), x+scale, y-1, scale/2);
 			if(bt.getRight()!=null) {
 				printGUI(bt.getRight(), x+scale, y-1, scale/2);

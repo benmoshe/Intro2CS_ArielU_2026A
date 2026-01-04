@@ -119,7 +119,8 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 		private int _mc;
 		
 		InOrderIeterator() {
-			_mc = getModeCount();
+			_ind = 0;
+            _mc = getModeCount();
 		}
 		@Override
 		public boolean hasNext() {
@@ -178,6 +179,7 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 	 */
 	@Override
 	public Iterator<T> iteratorByLevel() {
-		return BinaryTreeAlgo.byLevel(this).iterator();
+        ArrayList<T> a = BinaryTreeAlgo.byLevel(this);
+        return a.iterator();
 	}
 }
