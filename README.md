@@ -37,3 +37,5 @@ Ex0: https://docs.google.com/document/d/1UtngN203ttQKf5ackCnXs4UnbAROZWHr/edit?u
 Ex1: https://docs.google.com/document/d/1GcNQht9rsVVSt153Y8pFPqXJVju56CY4/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
 
 Ex2: https://docs.google.com/document/d/1BtSldHciAGqjccYC3d7BKvWqIljfxKeJ/edit?usp=sharing&ouid=113711744349547563645&rtpof=true&sd=true
+
+Ex3: https://docs.google.com/document/d/1dIZnlusIt11XkjfA61_cfP7LPc-8NtqF/edit?pli=1
